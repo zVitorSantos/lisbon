@@ -1,0 +1,5 @@
+config.py
+database.db
+.vscode/
+env/
+app/__pycache__/
