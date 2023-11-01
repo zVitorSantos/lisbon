@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/static/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/static/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+.container {
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Estilo para a seção de informações da empresa */
+.row {
+    margin-bottom: 20px;
+}
+
+.row div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para a seção de informações do CAE */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+/* Estilo para a seção de contato */
+h2 {
+    margin-top: 50px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.info-container {
+    padding: 20px;
+    /* border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}

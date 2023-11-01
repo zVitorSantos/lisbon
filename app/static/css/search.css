@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('/static/Montserrat-Regular.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('/static/Montserrat-Bold.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Bold.ttf') format('truetype');
 }
 .col-md-9 {
     width: 82%;
@@ -58,7 +58,9 @@ p {
 }
 
 .pagination-container {
-    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
 }
 
 .pagination a {
@@ -67,13 +69,15 @@ p {
     padding: 10px 20px;
     border: 1px solid #ccc;
     text-decoration: none;
-  }
-  
+    border-radius: 12px;  
+}
+
 .pagination a:hover {
     background-color: #ddd;
 }
 
 .pagination .active {
     font-weight: bold;
-    background-color: #f1f1f1;
+    background-color: #007bff;  
+    color: white; 
 }

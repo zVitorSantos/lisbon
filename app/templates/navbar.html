@@ -1,12 +1,68 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand ml-3" href="{{ url_for('routes.index') }}">STUMETIN</a> 
+    <a class="navbar-brand ml-3" href="{{ url_for('routes.index') }}">
+      <img src="/static/assets/logo.png" alt="Seu logo" title="" style="height:35px;padding-right: 4px;">
+        STUMETIN</a> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <form class="form-inline ml-auto" method="get" action="{{ url_for('routes.search') }}"> 
-          <input id="search-input" type="text" name="query" placeholder="Nome da Empresa ou NIF" class="form-control mr-2" value="{{ request.args.get('query', '') }}">
+      <div class="search-container">
+        <form class="form-inline ml-auto" method="get" action="{{ url_for('routes.search') }}"> 
+          <input type="text" id="search-input" name="query" placeholder="Nome da Empresa, NIF ou Resumo de CAE" class="form-control mr-2" value="{{ request.args.get('query', '') }}" autocomplete="off">
           <button type="submit" class="btn btn-outline-success">🔎</button>
-      </form>
-    </div>
+        </form>
+        <div id="suggestions"></div>
+      </div>
 </nav>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $("#search-input").on("input", function() {
+        const query = $(this).val();
+        
+        if (query.length < 3) {
+            $("#suggestions").hide();
+            return;
+        }
+        
+        $.get("/suggestions", {query: query}, function(data) {
+            let dropdown = '<div class="suggestions-list">';
+            
+            for (let i = 0; i < Math.min(data.length, 15); i++) { 
+                const item = data[i];
+                let multipleCAEs = item.cae.split(',');
+                let caeText = multipleCAEs.join(' - ');
+                
+                dropdown += `
+                <a href="/${item.nif}" class="suggestion-card">
+                  <div class="details">
+                    <div>${item.nome}</div>
+                  </div>
+                  <div class="cae-info">
+                    <div class="truncate">${item.resumo_cae}</div>
+                  </div>
+                </a>`;
+            }
+            
+            dropdown += '</div>';
+            
+            // Mostrar as sugestões
+            $("#suggestions").html(dropdown).show();
+        });
+    });
+
+    // Esconder as sugestões quando o usuário sair do campo de entrada
+    $("#search-input").on("focusout", function() {
+        setTimeout(function() {
+            $("#suggestions").hide();
+        }, 200);  // Esconde após 200 milissegundos
+    });
+
+    // Mostrar as sugestões novamente quando o usuário voltar ao campo de entrada
+    $("#search-input").on("focus", function() {
+        if ($(this).val().length >= 3) {
+            $("#suggestions").show();
+        }
+    });
+});
+</script>

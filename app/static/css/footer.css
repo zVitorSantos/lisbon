@@ -1,11 +1,15 @@
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('/static/Montserrat-Regular.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url('/static/Montserrat-Bold.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+.row div {
+    border: 0;
 }
 
 /* Estilos do Rodapé */
@@ -15,6 +19,7 @@
 }
 
 .footer-28 {
+    margin-top: 1rem;
     padding: 40px 0;
 }
 
@@ -29,7 +34,8 @@
 }
 
 .footer-list-28 ul {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
 }
