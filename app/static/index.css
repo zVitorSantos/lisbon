@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/static/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+.container {
+    margin-top: 1rem;
+}
+.card-body {
+    height: 360px;
+    overflow: hidden;
+}
+.card-description {
+    max-height: 12em;
+    overflow: auto;
+}
+/* Personalização da barra de rolagem */
+.card-description::-webkit-scrollbar {
+    width: 8px;
+}
+.card-description::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+.card-description::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+.card-description::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/static/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/static/Montserrat-Bold.ttf') format('truetype');
+}
+.col-md-9 {
+    width: 82%;
+}
+
+.mb-4 {
+    margin-bottom: 0.5rem!important;
+}
+
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 18%;
+}
+
+.h3, h3 {
+    margin-top: 0.3rem;
+    font-size: calc(1.3rem + .6vw);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+#regiao.form-control {
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-top: 1rem;
+}
+
+.card:hover {
+    border: 0.1rem solid #000;  
+}
+
+.card-body {
+    overflow: hidden;
+}
+
+.card-title {
+    margin-bottom: 0.2rem; 
+}
+
+#nif_empresa {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 0.7rem;
+}
+
+.pagination-container {
+    margin-left: 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    margin-left: 0;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+  }
+  
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.pagination .active {
+    font-weight: bold;
+    background-color: #f1f1f1;
+}

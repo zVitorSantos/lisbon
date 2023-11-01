@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand ml-3" href="{{ url_for('routes.index') }}">STUMETIN</a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline ml-auto" method="get" action="{{ url_for('routes.search') }}"> 
+          <input id="search-input" type="text" name="query" placeholder="Nome da Empresa ou NIF" class="form-control mr-2" value="{{ request.args.get('query', '') }}">
+          <button type="submit" class="btn btn-outline-success">🔎</button>
+      </form>
+    </div>
+</nav>

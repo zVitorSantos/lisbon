@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/static/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+/* Estilos do Rodapé */
+.app-footer {
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-28 {
+    padding: 40px 0;
+}
+
+.footer-bg-layer {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 0;
+}
+
+.footer-title-28 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-list-28 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list-28 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-list-28 ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-list-28 ul li a:hover {
+    text-decoration: underline;
+}
+
+.copy-footer-28 {
+    margin: 0;
+}
+
+/* Estilos dos Ícones de Mídias Sociais */
+.social-icons li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-icons li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Botão Voltar ao Topo */
+#movetop {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+#movetop:hover {
+    background: #555;
+}
